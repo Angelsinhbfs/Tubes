@@ -28,14 +28,13 @@ nav ul {
     display: flex;
 }
 
-nav ul.nav-left,
 nav ul.nav-right {
     display: none; /* Hide the menus initially */
     flex-direction: column;
     background-color: #333;
     position: absolute;
     top: 50px; /* Adjust this value based on the navbar height */
-    right: 0;
+    right: 50px;
     width: 200px;
 }
 
@@ -56,6 +55,8 @@ nav ul li a:hover {
 }
 
 .hamburger-menu {
+    position: relative;
+    right: 24px;
     font-size: 24px;
     color: white;
     cursor: pointer;
@@ -114,7 +115,18 @@ nav ul li a:hover {
 }
 
 /* Toggle the menus when the checkbox is checked */
-.menu-toggle:checked ~ .nav-left,
 .menu-toggle:checked ~ .nav-right {
     display: flex;
+}
+
+#tube {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.item {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
 }
