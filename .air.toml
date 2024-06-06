@@ -1,0 +1,12 @@
+# .air.toml
+
+# Config file for Air
+[build]
+bin = "app" # Binary name
+cmd = "go build -o ./tmp/app main.go" # Command to build the binary
+full_bin = "./tmp/app" # Full path to the binary
+log = "air.log" # Log file
+exclude_dir = ["static", "templates"] # Directories to exclude from watching
+
+[log]
+color = true # Enable colored output

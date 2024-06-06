@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul.nav-left,
+nav ul.nav-right {
+    display: none; /* Hide the menus initially */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px; /* Adjust this value based on the navbar height */
+    right: 0;
+    width: 200px;
+}
+
+nav ul li {
+    display: block;
+    text-align: right;
+}
+
+nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #211;
+}
+
+.hamburger-menu {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    margin-top: 50px; /* Adjust this value based on the navbar height */
+}
+
+.sidemenu {
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    position: fixed;
+    top: 50px; /* Adjust this value based on the navbar height */
+    left: 0;
+    height: calc(100% - 50px); /* Adjust this value based on the navbar height */
+    overflow-y: auto;
+}
+
+.sidemenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidemenu ul li {
+    margin-bottom: 10px;
+}
+
+.sidemenu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidemenu ul li a:hover {
+    text-decoration: underline;
+}
+
+.sidemenu h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px; /* Adjust this value based on the sidebar width */
+    margin-top: 50px; /* Adjust this value based on the navbar height */
+    overflow-y: auto;
+}
+
+/* Toggle the menus when the checkbox is checked */
+.menu-toggle:checked ~ .nav-left,
+.menu-toggle:checked ~ .nav-right {
+    display: flex;
+}
