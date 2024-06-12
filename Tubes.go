@@ -18,6 +18,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		"templates/navbar.html",
 		"templates/sidemenu.html",
 		"templates/content.html",
+		"templates/connections.html",
 	)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
