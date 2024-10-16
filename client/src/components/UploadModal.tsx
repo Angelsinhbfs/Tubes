@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import Modal from "./Modal";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+import MarkdownPreview from "./MarkdownPreview";
+import "../styles/Modal.css"
 
 interface UploadModalProps {
     isOpen: boolean;
@@ -56,15 +56,17 @@ const UploadModal: React.FC<UploadModalProps> = ({ isOpen, onRequestClose }) => 
 
     return (
         <Modal isOpen={isOpen} onClose={onRequestClose}>
-            <h2>Upload Content</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Title:</label>
                     <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
                 </div>
-                <div>
-                    <label>Body:</label>
-                    <textarea value={body} onChange={(e) => setBody(e.target.value)} required />
+                <div className="modal-content">
+                    <div className="modal-input">
+                        <label>Input</label>
+                        <textarea  value={body} onChange={(e) => setBody(e.target.value)} required />
+                    </div>
+                    <MarkdownPreview markdown={body} /> {/* Render the MarkdownPreview component */}
                 </div>
                 <div>
                     <label>Image:</label>
